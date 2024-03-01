@@ -9,40 +9,40 @@
 #include <algorithm>
 
 std::map<const RFbeamVld1::Vld1Command_t, const RFbeamVld1::CommandInfo_t> RFbeamVld1::commandMap {
-		{ Vld1Command_t::INIT, { "INIT", initPayloadSize, { Vld1Reply_t::RESP, Vld1Reply_t::VERS } } },
-		{ Vld1Command_t::GNFD, { "GNFD", gnfdPayloadSize, { Vld1Reply_t::RESP, Vld1Reply_t::RADC, Vld1Reply_t::RFFT, Vld1Reply_t::PDAT, Vld1Reply_t::DONE } } },
-		{ Vld1Command_t::GRPS, { "GRPS", grpsPayloadSize, { Vld1Reply_t::RESP, Vld1Reply_t::RPST } } },
-		{ Vld1Command_t::SRPS, { "SRPS", srpsPayloadSize, { Vld1Reply_t::RESP } } },
-		{ Vld1Command_t::RFSE, { "RFSE", rfsePayloadSize, { Vld1Reply_t::RESP } } },
-		{ Vld1Command_t::GBYE, { "GBYE", gbyePayloadSize, { Vld1Reply_t::RESP } } },
-		{ Vld1Command_t::RRAI, { "RRAI", rraiPayloadSize, { Vld1Reply_t::RESP } } },
-		{ Vld1Command_t::THOF, { "THOF", thofPayloadSize, { Vld1Reply_t::RESP } } },
-		{ Vld1Command_t::MIRA, { "MIRA", miraPayloadSize, { Vld1Reply_t::RESP } } },
-		{ Vld1Command_t::MARA, { "MARA", maraPayloadSize, { Vld1Reply_t::RESP } } },
-		{ Vld1Command_t::RAVG, { "RAVG", ravgPayloadSize, { Vld1Reply_t::RESP } } },
-		{ Vld1Command_t::TGFI, { "TGFI", tgfiPayloadSize, { Vld1Reply_t::RESP } } },
-		{ Vld1Command_t::PREC, { "PREC", precPayloadSize, { Vld1Reply_t::RESP } } },
-		{ Vld1Command_t::TXPW, { "TXPW", txpwPayloadSize, { Vld1Reply_t::RESP } } },
-		{ Vld1Command_t::INTN, { "INTN", intnPayloadSize, { Vld1Reply_t::RESP } } },
-		{ Vld1Command_t::SRDF, { "SRDF", srdfPayloadSize, { Vld1Reply_t::RESP } } },
-		{ Vld1Command_t::JBTL, { "JBTL", jbtlPayloadSize, { Vld1Reply_t::RESP } } }
+		{Vld1Command_t::INIT, {"INIT", initPayloadSize, {Vld1Reply_t::RESP, Vld1Reply_t::VERS}}},
+		{Vld1Command_t::GNFD, {"GNFD", gnfdPayloadSize, {Vld1Reply_t::RESP, Vld1Reply_t::RADC, Vld1Reply_t::RFFT, Vld1Reply_t::PDAT, Vld1Reply_t::DONE}}},
+		{Vld1Command_t::GRPS, {"GRPS", grpsPayloadSize, {Vld1Reply_t::RESP, Vld1Reply_t::RPST}}},
+		{Vld1Command_t::SRPS, {"SRPS", srpsPayloadSize, {Vld1Reply_t::RESP}}},
+		{Vld1Command_t::RFSE, {"RFSE", rfsePayloadSize, {Vld1Reply_t::RESP}}},
+		{Vld1Command_t::GBYE, {"GBYE", gbyePayloadSize, {Vld1Reply_t::RESP}}},
+		{Vld1Command_t::RRAI, {"RRAI", rraiPayloadSize, {Vld1Reply_t::RESP}}},
+		{Vld1Command_t::THOF, {"THOF", thofPayloadSize, {Vld1Reply_t::RESP}}},
+		{Vld1Command_t::MIRA, {"MIRA", miraPayloadSize, {Vld1Reply_t::RESP}}},
+		{Vld1Command_t::MARA, {"MARA", maraPayloadSize, {Vld1Reply_t::RESP}}},
+		{Vld1Command_t::RAVG, {"RAVG", ravgPayloadSize, {Vld1Reply_t::RESP}}},
+		{Vld1Command_t::TGFI, {"TGFI", tgfiPayloadSize, {Vld1Reply_t::RESP}}},
+		{Vld1Command_t::PREC, {"PREC", precPayloadSize, {Vld1Reply_t::RESP}}},
+		{Vld1Command_t::TXPW, {"TXPW", txpwPayloadSize, {Vld1Reply_t::RESP}}},
+		{Vld1Command_t::INTN, {"INTN", intnPayloadSize, {Vld1Reply_t::RESP}}},
+		{Vld1Command_t::SRDF, {"SRDF", srdfPayloadSize, {Vld1Reply_t::RESP}}},
+		{Vld1Command_t::JBTL, {"JBTL", jbtlPayloadSize, {Vld1Reply_t::RESP}}}
 };
 
 std::map<const RFbeamVld1::Vld1Reply_t, const RFbeamVld1::replyInfo_t> RFbeamVld1::replyMap {
-		{ Vld1Reply_t::RESP, { "RESP", respPayloadSize } },
-		{ Vld1Reply_t::VERS, { "VERS", versPayloadSize } },
-		{ Vld1Reply_t::RADC, { "RADC", radcPayloadSize } },
-		{ Vld1Reply_t::RFFT, { "RFFT", rfftPayloadSize } },
-		{ Vld1Reply_t::PDAT, { "PDAT", pdatPayloadSize } },
-		{ Vld1Reply_t::DONE, { "DONE", donePayloadSize } },
-		{ Vld1Reply_t::RPST, { "RPST", rpstPayloadSize } }
+		{Vld1Reply_t::RESP, {"RESP", respPayloadSize}},
+		{Vld1Reply_t::VERS, {"VERS", versPayloadSize}},
+		{Vld1Reply_t::RADC, {"RADC", radcPayloadSize}},
+		{Vld1Reply_t::RFFT, {"RFFT", rfftPayloadSize}},
+		{Vld1Reply_t::PDAT, {"PDAT", pdatPayloadSize}},
+		{Vld1Reply_t::DONE, {"DONE", donePayloadSize}},
+		{Vld1Reply_t::RPST, {"RPST", rpstPayloadSize}}
 };
 
 std::map<const RFbeamVld1::Vld1Baud_t, const uint32_t> RFbeamVld1::baudMap {
-		{ Vld1Baud_t::BAUD_115200, 115200 },
-		{ Vld1Baud_t::BAUD_460800, 460800 },
-		{ Vld1Baud_t::BAUD_921600, 921600 },
-		{ Vld1Baud_t::BAUD_2000000, 2000000 }
+		{Vld1Baud_t::BAUD_115200, 115200},
+		{Vld1Baud_t::BAUD_460800, 460800},
+		{Vld1Baud_t::BAUD_921600, 921600},
+		{Vld1Baud_t::BAUD_2000000, 2000000}
 };
 
 RFbeamVld1::RFbeamVld1(HardwareSerial &c, uint8_t rxPin, uint8_t txPin, PowerControlFunction pwrCntl) : channel(c), rxPin(rxPin), txPin(txPin), powerControl(pwrCntl) {
@@ -50,7 +50,7 @@ RFbeamVld1::RFbeamVld1(HardwareSerial &c, uint8_t rxPin, uint8_t txPin, PowerCon
 
 RFbeamVld1::Vld1ResponcePtr RFbeamVld1::begin() {
 	TaskFunction *actualTask;
-	uint8_t payload { 0x00 };
+	uint8_t payload {0x00};
 
 	powerControl(false);
 	channel.begin(rxPin, txPin);
@@ -66,12 +66,11 @@ RFbeamVld1::Vld1ResponcePtr RFbeamVld1::begin() {
 			sizeof(const Vld1Responce_t*));
 	assert((responceQueue != 0) && "Couldn't create responceQueue");
 
-	actualTask = new TaskFunction { [this]() {
+	actualTask = new TaskFunction {[this]() {
 		this->processCommands();
-	} };
-	BaseType_t returnCode = xTaskCreatePinnedToCore(taskLauncher,
-			"Process Commands", 4096, reinterpret_cast<void*>(actualTask), 6,
-			NULL, CONFIG_ARDUINO_RUNNING_CORE);
+	}};
+	BaseType_t returnCode = xTaskCreatePinnedToCore(taskLauncher, "Process Commands", 2048, reinterpret_cast<void*>(actualTask),
+			6, NULL, CONFIG_ARDUINO_RUNNING_CORE);
 	assert((returnCode == pdTRUE) && "Couldn't create processReplies");
 
 	channel.flush(100);
@@ -87,7 +86,7 @@ RFbeamVld1::Vld1ResponcePtr RFbeamVld1::begin() {
 
 void RFbeamVld1::sendCommand(Vld1Command_t cmd, const void *dataPtr) {
 	const uint8_t *bytePtr = reinterpret_cast<const uint8_t*>(dataPtr);
-	CommandRequest_t nextCommand { cmd, bytePtr };
+	CommandRequest_t nextCommand {cmd, bytePtr};
 	BaseType_t result = xQueueSendToBack(pendingCommandQueue, &nextCommand, 0);
 	if (result != pdTRUE) {
 		log_e("Command Queue Full");
@@ -95,8 +94,8 @@ void RFbeamVld1::sendCommand(Vld1Command_t cmd, const void *dataPtr) {
 }
 
 RFbeamVld1::Vld1ResponcePtr RFbeamVld1::getRadarReply(bool waitForReply) {
-	Vld1ResponcePtr responcePtr { new Vld1Responce_t };
-	const Vld1Responce_t *queueData { nullptr };
+	Vld1ResponcePtr responcePtr {new Vld1Responce_t};
+	const Vld1Responce_t *queueData {nullptr};
 	TickType_t waitTime = (waitForReply) ? portMAX_DELAY : 0;
 	auto status = xQueueReceive(responceQueue, &queueData, waitTime);
 	if (status == pdTRUE) {
@@ -208,10 +207,12 @@ RFbeamVld1::Vld1ResponcePtr RFbeamVld1::setShortRangeFilter(
 }
 
 void RFbeamVld1::processCommands() {
+	uint32_t lowWaterMark {UINT32_MAX};
+
 	for (;;) {
 		MessageHeader_t commandBytes;
 		uint8_t gnfdPayloadByte;
-		bool gnfdCommand { false };
+		bool gnfdCommand {false};
 		CommandRequest_t nextCommmand;
 		std::vector<Vld1Reply_t> repliesExpected;
 		repliesExpected.reserve(CommandInfo_t::maxReplies);
@@ -277,14 +278,14 @@ void RFbeamVld1::processCommands() {
 			channel.sendData(dataPtr, commandBytes.payloadLength);
 		}
 
-		std::unique_ptr<Vld1Responce_t> responseData { new Vld1Responce_t };
+		std::unique_ptr<Vld1Responce_t> responseData {new Vld1Responce_t};
 		assert((responseData != nullptr) && "responseData NULL");
 		responseData->commandSent = cmd;
 		responseData->statusCode = Vld1ReplyStatus_t::OK;
 		if (cmd == Vld1Command_t::GNFD) {
 			responseData->gnfdPayloadByte = gnfdPayloadByte;
 		}
-		bool flushBuffer { false };
+		bool flushBuffer {false};
 
 		for (auto nextReply : repliesExpected) {
 			log_i("Reply: %d", nextReply);
@@ -443,13 +444,19 @@ void RFbeamVld1::processCommands() {
 			responseData->baud = newBaud;
 		}
 
-		auto ptr = responseData.get();
+		Vld1Responce_t *ptr = responseData.release();
 		BaseType_t result = xQueueSendToBack(responceQueue, &ptr, 0);
 		if (result == pdTRUE) {
 			log_i("Results Enqueued");
-			responseData.release();
 		} else {
+			delete ptr;
 			log_e("Results Queue Full");
+		}
+
+		auto currentWatermark = uxTaskGetStackHighWaterMark(NULL);
+		if (currentWatermark < lowWaterMark) {
+			lowWaterMark = currentWatermark;
+			log_w("New Water Mark: %lu", lowWaterMark);
 		}
 	}
 }
